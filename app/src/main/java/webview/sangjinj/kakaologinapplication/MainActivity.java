@@ -58,13 +58,8 @@ public class MainActivity extends Activity {
                 Log.d("###########","isKakaoLogin start");
                 isKakaoLogin();
                 Log.d("###########","isKakaoLogin end");
-//                KakaoSDK.init(new KakaoSDKAdapter());
             }
         });
-
-
-
-
     }
 
     private void isKakaoLogin() {
@@ -73,7 +68,6 @@ public class MainActivity extends Activity {
         mKakaocallback = new SessionCallback();
         Session.getCurrentSession().addCallback(mKakaocallback);
         Session.getCurrentSession().checkAndImplicitOpen();
-
         //mKakaocallback.onSessionOpened();
         Log.d("###########","2");
         Session.getCurrentSession().addCallback(mKakaocallback);
@@ -88,7 +82,6 @@ public class MainActivity extends Activity {
         if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
             return;
         }
-
         super.onActivityResult(requestCode, resultCode, data);
     }
 
@@ -112,6 +105,8 @@ public class MainActivity extends Activity {
                 Log.d("###########TAG" , exception.getMessage());
             }
         }
+
+
     }
     /**
      * 사용자의 상태를 알아 보기 위해 me API 호출을 한다.
